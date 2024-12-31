@@ -9,6 +9,10 @@ import scheduler.*;
 
 public class TimetableAction extends ActionSupport implements ServletRequestAware {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 232301774540578512L;
 	HttpServletRequest request;
 	List<String> start, end;
 	List<String> studentgroup, nosubject, stgrpsubject, subjecttime;

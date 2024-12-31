@@ -30,7 +30,7 @@ public class inputdata {
 		hoursperday = 7;
 		daysperweek = 5;
 		try {
-			File file = new File("c:\\test\\input.txt");
+			File file = new File("C:\\Users\\Admin\\OneDrive\\Desktop\\clone\\Time-table-scheduler\\input.txt");
 			// File file = new File(System.getProperty("user.dir") +
 			// "/input.txt");
 			
@@ -87,42 +87,50 @@ public class inputdata {
 	// assigning a teacher for each subject for every studentgroup
 	public void assignTeacher() {
 
-		// looping through every studentgroup
-		for (int i = 0; i < nostudentgroup; i++) {
+	    // looping through every studentgroup
+	    for (int i = 0; i < nostudentgroup; i++) {
 
-			// looping through every subject of a student group
-			for (int j = 0; j < studentgroup[i].nosubject; j++) {
+	        // looping through every subject of a student group
+	        for (int j = 0; j < studentgroup[i].nosubject; j++) {
 
-				int teacherid = -1;
-				int assignedmin = -1;
+	            int teacherid = -1;
+	            int assignedmin = -1;
 
-				String subject = studentgroup[i].subject[j];
+	            String subject = studentgroup[i].subject[j];
 
-				// looping through every teacher to find which teacher teaches the current subject
-				for (int k = 0; k < noteacher; k++) {
+	            // looping through every teacher to find which teacher teaches the current subject
+	            for (int k = 0; k < noteacher; k++) {
 
-					// if such teacher found,checking if he should be assigned the subject or some other teacher based on prior assignments
-					if (teacher[k].subject.equalsIgnoreCase(subject)) {
+	                // if such teacher found, checking if he should be assigned the subject or some other teacher based on prior assignments
+	                if (teacher[k].subject.equalsIgnoreCase(subject)) {
 
-						// if first teacher found for this subject
-						if (assignedmin == -1) {
-							assignedmin = teacher[k].assigned;
-							teacherid = k;
-						}
+	                    // if first teacher found for this subject
+	                    if (assignedmin == -1) {
+	                        assignedmin = teacher[k].assigned;
+	                        teacherid = k;
+	                    }
 
-						// if teacher found has less no of pre assignments than the teacher assigned for this subject
-						else if (assignedmin > teacher[k].assigned) {
-							assignedmin = teacher[k].assigned;
-							teacherid = k;
-						}
-					}
-				}
+	                    // if teacher found has fewer pre-assignments than the assigned teacher
+	                    else if (assignedmin > teacher[k].assigned) {
+	                        assignedmin = teacher[k].assigned;
+	                        teacherid = k;
+	                    }
+	                }
+	            }
 
-				// 'assigned' variable for selected teacher incremented
-				teacher[teacherid].assigned++;
+	            // Check if a valid teacher was found
+	            if (teacherid == -1) {
+	                System.out.println("No teacher found for subject: " + subject);
+	                // Handle this case as needed, e.g., assign a default teacher or skip
+	                continue;  // Skipping the assignment for now
+	            }
 
-				studentgroup[i].teacherid[j]= teacherid;
-			}
-		}
+	            // Increment 'assigned' variable for selected teacher
+	            teacher[teacherid].assigned++;
+
+	            // Assign the teacher to the student group
+	            studentgroup[i].teacherid[j] = teacherid;
+	        }
+	    }
 	}
 }

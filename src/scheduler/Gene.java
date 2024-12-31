@@ -6,6 +6,10 @@ import java.io.*;
 //gene represents permutation of slots as timetable for a single student group(looks like {5,22,14,1,...} )
 public class Gene implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4529192560087528297L;
 	public int slotno[];
 	int days=inputdata.daysperweek;
 	int hours=inputdata.hoursperday;

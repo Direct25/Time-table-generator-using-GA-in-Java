@@ -9,6 +9,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import scheduler.inputdata;
 
+@SuppressWarnings("serial")
 public class User extends ActionSupport implements SessionAware {
 	String username;
 	String password;
@@ -74,7 +75,7 @@ public class User extends ActionSupport implements SessionAware {
 
 	public void setSession(Map<String, Object> map) {
 		// TODO Auto-generated method stub
-		sessionMap = (SessionMap) map;
+		sessionMap = (SessionMap<String, Object>) map;
 	}
 	
 	public String logout(){  

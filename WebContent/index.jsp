@@ -158,8 +158,8 @@
 										Get started <br>with us <br>today!
 									</h4>
 								</div>
-						</a></li>
-
+						      </a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -294,9 +294,9 @@
 				</div>
 				<div class="col-md-4">
 					<ul class="list-inline social-buttons">
-						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="https://www.facebook.com/pranav.khurana.56"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="https://www.linkedin.com/in/pranav-khurana-421525115"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="https://chat.whatsapp.com/LE5dzoor5u24ZVjbUr5mkw"><i class="fa fa-whatsapp"></i></a></li>
+						<li><a href="https://www.instagram.com/_sudhanshu4_?igsh=dnpkbndlY2t5bXQw"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/aryan-kushwaha-537819284?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa fa-linkedin"></i></a></li>
 					</ul>
 				</div>
 				<div class="col-md-4">
@@ -307,7 +307,7 @@
 				</div>
 			</div>
 		</div>
-		<div>Made with <span style="color: #e74c3c;font-size:30px;">&hearts;</span> by <a href="https://www.linkedin.com/in/pranav-khurana-421525115">Pranav</a> at JavaTpoint</div>
+		<div>Made with <span style="color: #e74c3c;font-size:30px;">&hearts;</span> by <a href="https://www.linkedin.com/school/shree-l-r-tiwari-college-of-engineering-thane/">SLRTCE STUDENTS</a> at SLRTCE</div>
 	</footer>
 
 

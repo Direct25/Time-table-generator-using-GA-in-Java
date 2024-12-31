@@ -6,6 +6,10 @@ import java.util.*;
 //Chromosome represents array of genes as complete timetable (looks like gene[0]gene[1]gene[2]...)
 public class Chromosome implements Comparable<Chromosome>,Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	static double crossoverrate=inputdata.crossoverrate;
 	static double mutationrate=inputdata.mutationrate;
 	static int hours=inputdata.hoursperday,days=inputdata.daysperweek;
@@ -53,11 +57,15 @@ public class Chromosome implements Comparable<Chromosome>,Serializable{
 			
 			for(int j=0;j<nostgrp;j++){
 			
-				Slot slot;
+				Slot slot = null;
 				//System.out.println("i="+i+" j="+j);
+				if(gene[j].slotno[i]<TimeTable.slot.length) {
 				if(TimeTable.slot[gene[j].slotno[i]]!=null)
 					slot=TimeTable.slot[gene[j].slotno[i]];
 				else slot=null;
+				}else {
+				    System.out.println("Slot index out of bounds: " + gene[j].slotno[i]);
+				}
 
 				if(slot!=null){
 				
@@ -75,6 +83,7 @@ public class Chromosome implements Comparable<Chromosome>,Serializable{
 		point=0;
 		return fitness;
 	}
+		
 	
 	
 	

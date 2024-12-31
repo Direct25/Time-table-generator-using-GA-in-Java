@@ -5,7 +5,7 @@
   "homepage": "http://startbootstrap.com/template-overviews/agency",
   "author": "Start Bootstrap",
   "license": {
-    "type": "MIT",
+    "string": "MIT",
     "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
   },
   "devDependencies": {

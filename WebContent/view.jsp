@@ -1,7 +1,7 @@
 <%@page import="scheduler.*"%>
 <%@page import="java.util.Date"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +24,57 @@
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    
+  <!-- Include html2canvas Library via CDN for better PDF generation -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+<!-- Updated jsPDF for handling the HTML content properly -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+<!-- Add buttons for printing and downloading as PDF -->
+<button onclick="printTimetable()">Print Timetable</button>
+<button id="downloadPdfBtn"> 👈 Download as PDF</button>
+
+<script>
+  function printTimetable() {
+    // Hide buttons before printing
+    document.querySelector('button').style.display = 'none';
+    document.querySelector('#downloadPdfBtn').style.display = 'none';
+
+    // Trigger print dialog
+    window.print();
+
+    // Show buttons again after printing
+    document.querySelector('button').style.display = 'inline';
+    document.querySelector('#downloadPdfBtn').style.display = 'inline';
+  }
+
+  // Use html2canvas and jsPDF for downloading the timetable as PDF
+  document.getElementById('downloadPdfBtn').addEventListener('click', function () {
+    var { jsPDF } = window.jspdf;
+
+    // Target the timetable container
+    var timetable = document.querySelector('.timetable');
+
+    // Use html2canvas to take a screenshot of the timetable
+    html2canvas(timetable, {
+      scale: 2 // Higher scale for better resolution
+    }).then(function (canvas) {
+      // Create a new jsPDF instance
+      var pdf = new jsPDF('p', 'pt', 'a4');
+      
+      // Get the canvas data and insert into the PDF
+      var imgData = canvas.toDataURL('image/png');
+      var imgWidth = 595.28; // A4 width in pt
+      var imgHeight = (canvas.height * imgWidth) / canvas.width; // Maintain aspect ratio
+      
+      pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+      
+      // Save the generated PDF
+      pdf.save('timetable.pdf');
+    });
+  });
+</script>
 
 	<!-- Theme CSS -->
     <link href="css/agency.min.css" rel="stylesheet">
@@ -35,6 +86,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+	
 	
 </head>
 
@@ -143,6 +195,7 @@
 
 <!-- Theme JavaScript -->
     <script src="js/agency.min.js"></script>
+    
 
 </body>
 
