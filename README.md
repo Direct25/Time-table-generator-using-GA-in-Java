@@ -24,7 +24,7 @@ Instructions to use this project :
 
 This project is configured in eclipse and is a simple implementation
 
-  * Clone this repository.
+  * For cloning this repository.
 
   * Import the project in Eclipse ( you can even copy the package into a new project if you use a different IDE / If import of Eclipse project doesnt work well with that IDE )
 
@@ -32,7 +32,7 @@ This project is configured in eclipse and is a simple implementation
 
   * Set your database credendtials in line no 10-11 in UserDao.java 
 ```java
-  Class.forName("com.mysql.jdbc.Driver");
+  Class.forName("com.mysql.cj.jdbc.Driver");
   con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "", "");
 ```	    
 
@@ -47,7 +47,7 @@ PS : Contributing back to this project will be appreciated.
 
 ## Prerequisites
 
-  * Java 8
+  * Java 17+
   
   * Eclipse(compatible with Enterprise Edition)
   
@@ -121,6 +121,14 @@ Using Genetics Algorithm, a number of trade-off solutions, in terms of multiple 
 ## Author 
 
 **Pranav Khurana**
-
+**Credit goes to Pranav Khurana which help me to built this project**
 
 <i>PS: Project Report(in pdf) is available in root folder as AutomatedTimeTableScheduler.pdf</i>
+
+### Recent Changes
+In this repository, I have made several important updates:
+- Implemented versioning deployment descriptor.
+- Upgraded MySQL for better database management.
+- Enhanced database management for users.
+- Configured Apache Tomcat for improved server performance.
+- My updated ATG pdf also there...
