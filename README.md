@@ -133,6 +133,4 @@ In this repository, I have made several important updates:
 - Enhanced database management for users.
 - Configured Apache Tomcat for improved server performance.
 - My updated ATG pdf also there..
-=======
-# Time-table-generator-using-GA-in-Java
->>>>>>> 5e359a8b7f2e2745ebb2a0a5325660abf91a08fe
+
