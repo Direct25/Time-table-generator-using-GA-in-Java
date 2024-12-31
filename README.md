@@ -1,8 +1,9 @@
-﻿<div align="center"><h1><b>AUTOMATED TIME-TABLE SCHEDULER</b><br> (Using Genetic Algorithms)</h1>
+<<div align="center"><h1><b>AUTOMATED TIME-TABLE SCHEDULER</b><br> (Using Genetic Algorithms)</h1>
 
 <img alt="preview" src="/readme-images/preview.png" width="65%"></div>
 
 ## Introduction
+Creating a timetable for schools or colleges can be a challenging and time-consuming task. The Automated Timetable Scheduler uses Genetic Algorithms to simplify this process. It automatically generates timetables by considering various constraints, ensuring that the schedules are efficient and conflict-free. This tool saves time and reduces errors compared to manual scheduling, making it an essential solution for educational institutions.
 Time Table Scheduling is an NP-hard problem and hence polynomial time verifiable using genetic algorithms. It a typical scheduling problem that appears to be a tedious job in every academic institute once or twice a year. In earlier days, time table scheduling was done manually with a single person or some group involved in task of scheduling it manually, which takes a lot of effort and time. Planning timetables is one of the most complex and error-prone applications.
 Timetabling is the task of creating a timetable while satisfying some constraints. There are basically two types of constraints, soft constraints and hard constraints. Soft constraints are those if we violate them in scheduling, the output is still valid, but hard constraints are those which if we violate them; the timetable is no longer valid. The search space of a timetabling problem is too vast, many solutions exist in the search space and few of them are not feasible. Feasible solutions here mean those which do not violate hard constraints and as well try to satisfy soft constraints. We need to choose the most appropriate one from feasible solutions. Most appropriate ones here mean those which do not violate soft constraints to a greater extent. In this project hard-constraints have been taken care of strictly and it has been ensured that soft-constraints are as well followed as much as possible.
 
@@ -132,3 +133,6 @@ In this repository, I have made several important updates:
 - Enhanced database management for users.
 - Configured Apache Tomcat for improved server performance.
 - My updated ATG pdf also there..
+=======
+# Time-table-generator-using-GA-in-Java
+>>>>>>> 5e359a8b7f2e2745ebb2a0a5325660abf91a08fe
